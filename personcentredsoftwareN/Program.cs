@@ -31,7 +31,5 @@ namespace personcentredsoftwareN
             var uniqueStaions = indexesOfStationsThatCircularJorneyCanFinish.Distinct();
             Console.WriteLine("Indexes of the staion that you can start jorney to finish full circle " + String.Join(", ", uniqueStaions.ToArray()));
         }
-
-      
     }
 }
