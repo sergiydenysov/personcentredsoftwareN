@@ -37,19 +37,18 @@ namespace personcentredsoftwareN
 
         public static List<int> CheckCircularJorneyForIndex(int index, Dictionary<int, int> dict)
         {
-            var listOfItemsThatCanPass=  new List<int>();
-            var prevIndex = GeneralHelper.GetPrevIndex(index, dict.Count);
+            var listOfItemsThatCanPass = new List<int>();
+            var prevIndex = GetPrevIndex(index, dict.Count);
             var amountOfGas = dict[index];
             
             for (int i = 0; i < dict.Count; i++)
             {
-                var val = dict[prevIndex];
                 amountOfGas += dict[prevIndex];
                 if (amountOfGas > 0)
                 {
                     listOfItemsThatCanPass.Add(prevIndex);
                 }
-                prevIndex = GeneralHelper.GetPrevIndex(prevIndex, dict.Count);
+                prevIndex = GetPrevIndex(prevIndex, dict.Count);
             }
 
             return listOfItemsThatCanPass;

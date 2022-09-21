@@ -28,7 +28,7 @@ namespace personcentredsoftwareN
                 indexesOfStationsThatCircularJorneyCanFinish.AddRange(GeneralHelper.CheckCircularJorneyForIndex(index, dict));
             }
 
-            var uniqueStaions = indexesOfStationsThatCircularJorneyCanFinish.Distinct();
+            var uniqueStaions = indexesOfStationsThatCircularJorneyCanFinish.Distinct().ToList();
             Console.WriteLine("Indexes of the staion that you can start jorney to finish full circle " + String.Join(", ", uniqueStaions.ToArray()));
         }
     }
